@@ -8,6 +8,7 @@ const SNavbar = styled.nav`
   justify-content: center;
   align-items: center;
   background-color: var(--red);
+  margin-bottom: 30px;
 
   a {
     color: white;
