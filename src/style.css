@@ -1,0 +1,14 @@
+:root {
+  --font: 'Raleway', sans-serif;
+  --red: #ef2c2c;
+
+  font-family: var(--font);
+}
+
+body {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('./assets/PokeTranslateBg.jpg');
+}
