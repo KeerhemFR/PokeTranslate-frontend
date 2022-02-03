@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from 'components/Home';
 import SearchPage from 'components/SearchPage';
 import Details from 'components/Details';
+import Footer from 'components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/searchpage" element={<SearchPage />} />
         <Route path="/details" element={<Details />} />
       </Routes>
+      <Footer />
     </>
   );
 }
