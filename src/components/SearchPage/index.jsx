@@ -60,7 +60,7 @@ export default function SearchPage() {
         <ul>
           {answer.map((data) => (
             <li>
-              <Link to={`/details/?${filter}&${data.nameEn}`}>
+              <Link to={`/details/?cat=${filter}&name=${data.nameEn}`}>
                 {data.nameEn}
               </Link>
             </li>
@@ -69,7 +69,7 @@ export default function SearchPage() {
         <ul>
           {answer.map((data) => (
             <li>
-              <Link to={`/details/?${filter}&${data.nameEn}`}>
+              <Link to={`/details/?cat=${filter}&name=${data.nameEn}`}>
                 {data.nameJp}
               </Link>
             </li>
