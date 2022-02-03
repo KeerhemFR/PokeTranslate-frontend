@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import SSearchPage from './style';
 
 export default function SearchPage() {
@@ -12,16 +13,15 @@ export default function SearchPage() {
       axios
         .get(`${process.env.REACT_APP_API_URL}/${filter}/${research}`)
         .then(({ data }) => {
-          setAnswer(data);
-        })
-        .catch(() => {
-          setAnswer([
-            {
-              nameFr: 'Pas de données valide trouvée',
-              nameEn: 'Not available data found',
-              nameJp: '正しいデータを見つかりませんでした',
-            },
-          ]);
+          return data.length
+            ? setAnswer(data)
+            : setAnswer([
+                {
+                  nameFr: 'Pas de données valide trouvée',
+                  nameEn: 'Not available data found',
+                  nameJp: '正しいデータを見つかりませんでした',
+                },
+              ]);
         });
     }
   }, [research, filter]);
@@ -50,17 +50,29 @@ export default function SearchPage() {
       <section className="listContainer">
         <ul>
           {answer.map((data) => (
-            <li key={data.id}>{data.nameFr}</li>
+            <li>
+              <Link to={`/details/?cat=${filter}&name=${data.nameEn}`}>
+                {data.nameFr}
+              </Link>
+            </li>
           ))}
         </ul>
         <ul>
           {answer.map((data) => (
-            <li key={data.id}>{data.nameEn}</li>
+            <li>
+              <Link to={`/details/?${filter}&${data.nameEn}`}>
+                {data.nameEn}
+              </Link>
+            </li>
           ))}
         </ul>
         <ul>
           {answer.map((data) => (
-            <li key={data.id}>{data.nameJp}</li>
+            <li>
+              <Link to={`/details/?${filter}&${data.nameEn}`}>
+                {data.nameJp}
+              </Link>
+            </li>
           ))}
         </ul>
       </section>

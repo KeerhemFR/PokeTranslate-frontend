@@ -4,6 +4,11 @@ const SSearchPage = styled.div`
   width: 100%;
   min-height: calc(100vh - 250px);
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .searchTools {
     display: flex;
     flex-flow: row wrap;
