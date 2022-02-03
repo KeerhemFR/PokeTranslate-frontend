@@ -34,10 +34,6 @@ const SHome = styled.section`
     font-size: 30px;
     font-weight: 400;
   }
-
-  @media screen and (max-height: 600px) {
-    min-height: calc(100vh);
-  }
 `;
 
 export default SHome;
