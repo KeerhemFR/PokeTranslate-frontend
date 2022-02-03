@@ -20,7 +20,6 @@ export default function Details() {
       .then(({ data }) => {
         return setAnswer(data[0]);
       });
-    console.log(urlCat);
   }, []);
 
   useEffect(() => {
