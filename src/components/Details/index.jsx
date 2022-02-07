@@ -39,7 +39,7 @@ export default function Details() {
         setComp(<h3>Sorry, we don&apos;t have what you are searching for</h3>);
         break;
     }
-  });
+  }, []);
 
   return <SDetails>{comp}</SDetails>;
 }
