@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import PokemonDetail from './PokemonDetail';
 import MoveDetail from './MoveDetail';
+import NatureDetail from './NatureDetail';
 import SDetails from './style';
 
 export default function Details() {
@@ -30,6 +31,9 @@ export default function Details() {
         break;
       case 'moves':
         setComp(<MoveDetail {...answer} />);
+        break;
+      case 'natures':
+        setComp(<NatureDetail {...answer} />);
         break;
       default:
         setComp(<h3>Sorry, we don&apos;t have what you are searching for</h3>);
